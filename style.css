@@ -48,7 +48,7 @@ header > span:nth-of-type(3) {left: 75%;}
     justify-content: space-around;
 }
 #logo {
-    width: 37%;
+    width: 45%;
     height: 45%;
 }
 #logo > img {
@@ -382,7 +382,21 @@ header > span:nth-of-type(3) {left: 75%;}
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+    margin-bottom: 5vw;
 }
+#famous-mountain > span {
+    display: inline-block;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #2f2f2f;
+    z-index: -1;
+}
+#famous-mountain > span:nth-of-type(1) {left: 40%;}
+#famous-mountain > span:nth-of-type(2) {left: 50%;}
+#famous-mountain > span:nth-of-type(3) {left: 60%;}
 #famous-left-container {
     width: 30%;
     height: 100%;
@@ -489,4 +503,46 @@ header > span:nth-of-type(3) {left: 75%;}
     margin-left: .5em;
     color: #fff;
     font-family: 'Black Han Sans';
+}
+
+#climber {
+    height: 30vw;
+}
+#climber-title {
+    width: 100%;
+    height: 6vw;
+}
+#climber-title > h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    font-family: 'Black Han Sans';
+    letter-spacing: .1em;
+}
+#climber-title > p {
+    color: #c4956a;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+#climber-container {
+    width: 100%;
+    height: calc( 100% - 6vw );
+}
+#climber-list {
+    width: 60%;
+    height: 67%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vw;
+}
+.climber-content {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #282828;
+}
+.climber-content > img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
 }
