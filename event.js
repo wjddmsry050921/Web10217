@@ -80,3 +80,18 @@ mtVideo.addEventListener('click', () => {
     }
 })
 
+let famouseMountainTitle = document.querySelector('#famous-left-container > h2');
+
+function everestMoutain() {
+    famouseMountainTitle.innerHTML = 'EVEREST<br>MOUNTAIN';
+}
+function fujiMoutain() {
+    famouseMountainTitle.innerHTML = 'FUJI<br>MOUNTAIN';
+}
+function k2Moutain() {
+    famouseMountainTitle.innerHTML = 'K2<br>MOUNTAIN';
+}
+function kilomanjaroMoutain() {
+    famouseMountainTitle.innerHTML = 'KILOMANJARO<br>MOUNTAIN';
+}
+

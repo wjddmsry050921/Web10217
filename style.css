@@ -9,6 +9,9 @@ html {font-size: 1vw;}
 input {display: none;}
 .wrapper {width: 100%;}
 img {object-fit: cover;}
+::selection {
+    background: #c4956a;
+}
 
 #design-helper {
     height: 45vw;
@@ -101,6 +104,14 @@ header > span:nth-of-type(3) {left: 75%;}
     margin: 1.5em;
     margin-left: 8em;
     margin-right: unset;
+}
+#mid-header > p::selection {
+    background-color: #c4956a;
+    color: #fff;
+}
+#mid-header > p > br::selection {
+    background-color: #c4956a;
+    color: #fff;
 }
 #mid-header > button {
     width: 25%;
@@ -219,10 +230,18 @@ header > span:nth-of-type(3) {left: 75%;}
     font-weight: bold;
     font-size: 1rem;
 }
+#visual-info > p:nth-of-type(2)::selection {
+    background-color: #c4956a;
+    color: #fff;
+}
 #visual-info > p:nth-of-type(3) {
     color: #c4956a;
     font-weight: bold;
     font-size: 1rem;
+}
+#visual-info > p:nth-of-type(3)::selection {
+    background-color: #c4956a;
+    color: #fff;
 }
 #visual-info > span {
     width: 15%;
@@ -320,7 +339,7 @@ header > span:nth-of-type(3) {left: 75%;}
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: 4em;
+    /* padding-bottom: 4em; */
     position: absolute;
     top: 0;
 }
@@ -391,6 +410,10 @@ header > span:nth-of-type(3) {left: 75%;}
     font-size: 1.2rem;
     font-weight: bold;
 }
+#famous-left-container > p:nth-of-type(1)::selection {
+    background-color: #c4956a;
+    color: #fff;
+}
 #famous-left-container > p:not(:first-of-type) {
     color: rgba(255, 255, 255, 0.473);
     text-align: left;
@@ -411,6 +434,43 @@ header > span:nth-of-type(3) {left: 75%;}
     width: 100%;
     height: 100%;
     overflow: hidden;
+    position: relative;
+    padding: .3em;
+}
+.famouse-content > span {
+    position: absolute;
+    background-color: #c4956a;
+    transition: .4s;
+}
+.famouse-content > span:nth-of-type(1) {
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 1px;
+}
+.famouse-content > span:nth-of-type(2) {
+    width: 1px;
+    height: 0;
+    right: 0;
+    bottom: 0;
+}
+.famouse-content > span:nth-of-type(3) {
+    width: 0;
+    height: 1px;
+    right: 0;
+    bottom: 0;
+}
+.famouse-content > span:nth-of-type(4) {
+    width: 1px;
+    height: 0;
+    left: 0;
+    top: 0;
+}
+.famouse-content:hover > span:nth-of-type(odd) {
+    width: 100%;
+}
+.famouse-content:hover > span:nth-of-type(even) {
+    height: 100%;
 }
 .famouse-content > img {
     width: 100%;
