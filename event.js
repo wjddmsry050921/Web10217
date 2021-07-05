@@ -79,3 +79,4 @@ mtVideo.addEventListener('click', () => {
         mtVideo.pause();
     }
 })
+

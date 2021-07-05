@@ -8,6 +8,7 @@
 html {font-size: 1vw;}
 input {display: none;}
 .wrapper {width: 100%;}
+img {object-fit: cover;}
 
 #design-helper {
     height: 45vw;
@@ -21,7 +22,21 @@ header {
     width: calc(100% / (1 / 2));
     height: 100%;
     padding: 1em;
+    position: relative;
+    z-index: 1;
 }
+header > span {
+    display: inline-block;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #2f2f2f;
+    z-index: -1;
+}
+header > span:nth-of-type(1) {left: 25%;}
+header > span:nth-of-type(2) {left: 50%;}
+header > span:nth-of-type(3) {left: 75%;}
 #top-header {
     width: 100%;
     height: 10%;
@@ -103,6 +118,7 @@ header {
 #mid-header > button:hover {
     background-color: #c4956a;
     cursor: pointer;
+    transform: scale(.95);
 }
 #bottom-header {
     width: 100vw;
@@ -113,6 +129,7 @@ header {
     position: relative;
     width: calc(100% / (1 / 5));
     height: 100%;
+    z-index: 1;
 }
 #visual-controller {
     position: absolute;
@@ -169,7 +186,6 @@ header {
 .visual-content > img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     transition: all .6s;
 }
 .visual-content > img:hover {
@@ -346,25 +362,10 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-}
-#famous-back-design {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
     justify-content: center;
 }
-#famous-back-design > span {
-    transform: rotate(90deg);
-    display: inline-block;
-    width: 100%;
-    height: 1px;
-    background-color: #3E3E3E;
-}
 #famous-left-container {
-    width: 36%;
+    width: 30%;
     height: 100%;
     display: flex;
     align-items: flex-start;
@@ -374,17 +375,21 @@ header {
     z-index: 1;
 }
 #famous-left-container > h2 {
-    font-size: 2.7rem;
+    font-size: 2.3rem;
     text-align: left;
     color: #fff;
     font-family: 'Black Han Sans';
     letter-spacing: .1em;
-    padding: .5em 0;
+    padding: .3em 0;
 }
 #famous-left-container > p {
-    font-size: 1rem;
+    font-size: .8rem;
     color: #c4956a;
     padding: .8em 0;
+}
+#famous-left-container > p:nth-of-type(1) {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 #famous-left-container > p:not(:first-of-type) {
     color: rgba(255, 255, 255, 0.473);
@@ -393,4 +398,35 @@ header {
 
 #famous-right-container {
     width: 40%;
+    height: 100%;
+    padding: 5em 0;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: 35% 35%;
+    gap: 1vw;
+    align-content: center;
+    justify-content: center;
+}
+.famouse-content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.famouse-content > img {
+    width: 100%;
+    height: 100%;
+}
+.mountain-info {
+    display: flex;
+    flex-direction: row;
+}
+.mountain-info > span {
+    color: #c4956a;
+    font-size: .9rem;
+    font-weight: bold;
+}
+.mountain-info > p {
+    margin-left: .5em;
+    color: #fff;
+    font-family: 'Black Han Sans';
 }
