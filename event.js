@@ -95,3 +95,30 @@ function kilomanjaroMoutain() {
     famouseMountainTitle.innerHTML = 'KILOMANJARO<br>MOUNTAIN';
 }
 
+let a = 0, b = 0, c = 0;
+setInterval(() => {
+    let scrollY = document.querySelector('html').scrollTop;
+    let bodyHeight = document.querySelector('body').clientHeight;
+    let scrollValue = scrollY / bodyHeight;
+
+    a = bodyHeight * 0.3;
+    b = bodyHeight * 0.53;
+    c = bodyHeight * 1;
+    console.log(scrollValue);
+    if (scrollValue >= 0.03) {
+        document.querySelector('#mountains-title').className = 'mountainsTitleFadeIn';
+        document.querySelector('#choice-mountains').className = 'mountainschoiceFadeIn';
+        document.querySelector('#mountains-video').className = 'mountainsvideoFadeIn';
+    }
+
+}, 100);
+
+document.querySelector('#menu-window > ul > li:nth-of-type(2)').addEventListener('click', () => {
+    window.scrollTo(0, Math.round(a));
+});
+document.querySelector('#menu-window > ul > li:nth-of-type(3)').addEventListener('click', () => {
+    window.scrollTo(0, Math.round(b));
+});
+document.querySelector('#menu-window > ul > li:nth-of-type(4)').addEventListener('click', () => {
+    window.scrollTo(0, Math.round(c));
+});
