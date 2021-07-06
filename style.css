@@ -22,23 +22,11 @@ img {object-fit: cover;}
 }
 header {
     background: linear-gradient(to bottom, #282828 85%, #2f2f2f 15%);
-    width: calc(100% / (3 / 5));
+    width: calc(100% * (1 / 3));
     height: 100%;
     padding-top: 1em;
     position: relative;
 }
-header > span {
-    display: inline-block;
-    width: 2px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    background-color: #2f2f2f;
-    z-index: -1;
-}
-header > span:nth-of-type(1) {left: 25%;}
-header > span:nth-of-type(2) {left: 50%;}
-header > span:nth-of-type(3) {left: 75%;}
 #top-header {
     width: 100%;
     height: 10%;
@@ -164,7 +152,7 @@ header > span:nth-of-type(3) {left: 75%;}
 #mid-header > button {
     width: 25%;
     height: 10%;
-    margin-right: 16em;
+    margin-right: 10vw;
     border: 1px solid #c4956a;
     background-color: #282828;
     transition: .7s;
@@ -186,13 +174,13 @@ header > span:nth-of-type(3) {left: 75%;}
 
 #visual {
     position: relative;
-    width: calc(100% / (1 / 5));
+    width: calc(100% * (2 / 3));
     height: 100%;
 }
 #visual-controller {
     position: absolute;
     width: 11vw;
-    height: 130px;
+    height: 9vw;
     bottom: 8%;
     left: -22%;
     background-color: #c4956a;
@@ -673,6 +661,110 @@ footer > p {
     font-weight: lighter;
 }
 
-@media (max-width: 1240px) {
-    
+@media (max-width: 1024px) {
+    header {
+        width: calc( 100% * (1 / 4));
+        padding-top: 5vw;
+    }
+    #top-header {
+        background-color: #282828;
+        z-index: 10000000000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 5vw;
+        justify-content: flex-start;
+        padding: 0 1em;
+    }
+    #logo {
+        width: 18%;
+        height: 50%;
+        margin-right: 2em;
+    }
+    #top-header > label {
+        width: 3%;
+        height: 35%;
+    }
+    #top-header > label > span {
+        width: 100% !important;
+    }
+    #menu-window {
+        width: calc(100vw * (1 / 4));
+        height: 100vh;
+        left: calc(-100vw * (1 / 4));
+        top: 5vw;
+        z-index: -1;
+    }
+    #menu-window > ul {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    #menu-window > ul > li {
+        width: 100%;
+        height: 4vw;
+        color: #282828;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        transition: 1s;
+        font-size: 1.5rem;
+        padding: 0 1em;
+    }
+    #menu-window > ul > li:not(:last-of-type) {
+        margin-bottom: 1em;
+    }
+    #menu-window > ul > li:hover {
+        color: #fff;
+        background-color: #c4956a;
+    }
+    #menu-window > ul > li:nth-of-type(1) {
+        color: #fff;
+        background-color: #c4956a;
+
+    }
+    #menu-bar:checked ~ #menu-window {
+        top: 5vw;
+        left: 0;
+    }
+    #mid-header {
+        height: 83.5%;
+        padding: 0 2em;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+    #mid-header > h2 {
+        margin: unset;
+    }
+    #mid-header > p {
+        font-size: 1.5rem;
+        margin: unset;
+    }
+    #mid-header > button {
+        width: 50%;
+    }
+    #mid-header > button > p {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    #visual {
+        width: calc( 100% * (3 / 4));
+
+    }
+    #visual-controller {
+        width: calc( 100vw * (1 / 4));
+        height: 15%;
+        left: calc( -100vw * (1 / 4));
+        bottom: 0;
+        box-shadow: unset;
+        background: unset;
+    }
+    #visual-controller > button {
+        width: 4.5vw;
+        height: 4.5vw;
+        background: unset;
+    }
+    #visual-info > p {
+        font-size: 1.6rem !important;
+    }
 }
