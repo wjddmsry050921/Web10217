@@ -514,9 +514,25 @@ header > span:nth-of-type(3) {left: 75%;}
 .famouse-content {
     width: 100%;
     height: 100%;
-    overflow: hidden;
     position: relative;
     padding: .3em;
+    transition: 1s;
+}
+.famouse-content:nth-of-type(odd) {
+    opacity: 0;
+    top: -3vw;
+}
+.famouse-content:nth-of-type(even) {
+    opacity: 0;
+    bottom: -3vw;
+}
+.oddFamouseContentFadeIn {
+    opacity: 1 !important;
+    top: 0 !important;
+}
+.evenFamouseContentFadeIn {
+    opacity: 1 !important;
+    bottom: 0 !important;
 }
 .famouse-content > span {
     position: absolute;
@@ -610,14 +626,23 @@ header > span:nth-of-type(3) {left: 75%;}
     height: 100%;
     position: relative;
     background-color: #cdced2;
+    transition: .3s;
+    border-radius: 10px;
 }
 .climber-content > img{
     width: 100%;
     height: 100%;
+    transition: .3s;
+}
+.climber-content:hover {
+    background-color: #e9e9e9;
+}
+.climber-content:hover > img {
+    transform: translateY(-50px)
 }
 .climber-name {
     width: 100%;
-    height: 50px;
+    height: 3vw;
     position: absolute;
     bottom: 0;
     background-color: #fff;
@@ -634,4 +659,20 @@ header > span:nth-of-type(3) {left: 75%;}
     font-size: 1.3rem;
     font-family: unset;
     font-weight: bold;
+}
+footer {
+    height: 5vw;
+    background-color: #282828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer > p {
+    font-size: .8rem;
+    color: #686868;
+    font-weight: lighter;
+}
+
+@media (max-width: 1240px) {
+    
 }

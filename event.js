@@ -110,9 +110,14 @@ setInterval(() => {
         document.querySelector('#choice-mountains').className = 'mountainschoiceFadeIn';
         document.querySelector('#mountains-video').className = 'mountainsvideoFadeIn';
     }
+    if (scrollValue >= 0.3) {
+        document.querySelector('.famouse-content:nth-of-type(odd)').classList.add('oddFamouseContentFadeIn');
+        document.querySelector('.famouse-content:nth-of-type(3)').classList.add('oddFamouseContentFadeIn');
+        document.querySelector('.famouse-content:nth-of-type(even)').classList.add('evenFamouseContentFadeIn');
+        document.querySelector('.famouse-content:nth-of-type(4)').classList.add('evenFamouseContentFadeIn');
+    }
 
 }, 100);
-
 document.querySelector('#menu-window > ul > li:nth-of-type(2)').addEventListener('click', () => {
     window.scrollTo(0, Math.round(a));
 });
