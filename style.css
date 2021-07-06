@@ -656,8 +656,8 @@ footer {
     align-items: center;
 }
 footer > p {
-    font-size: .8rem;
-    color: #686868;
+    font-size: .9rem;
+    color: #e9e9e9;
     font-weight: lighter;
 }
 
@@ -766,5 +766,88 @@ footer > p {
     }
     #visual-info > p {
         font-size: 1.6rem !important;
+    }
+
+    #choice-container {
+        width: 70%;
+    }
+    .choice-content {
+        height: 27%;
+    }
+    .choice-content > img {
+        width: 8vw;
+        height: 8vw;
+    }
+    .choice-content > h4 {
+        font-size: 2.2rem;
+    }
+    #mountains-title > h2 {
+        font-size: 2.5rem;
+    }
+    #mountains-title > p {
+        font-size: 1.2rem;
+    }
+    .map-content > iframe {
+        height: 22vw;
+    }
+    #famous-mountain {
+        height: 75vw;
+        flex-direction: column;
+    }
+    #famous-mountain> span:nth-of-type(1) {left: 25%;}
+    #famous-mountain> span:nth-of-type(2) {left: 50%;}
+    #famous-mountain> span:nth-of-type(3) {left: 75%;}
+    #famous-left-container {
+        width: 60%;
+        height: 50%;
+    }
+    #famous-left-container > p:nth-of-type(1) {font-size: 2.4rem;}
+    #famous-left-container > p:nth-of-type(2) {font-size: 1.3rem;}
+    #famous-left-container > p:nth-of-type(3) {font-size: 1.3rem;}
+    #famous-left-container > h2 {font-size: 3.4rem;}
+    
+    #famous-right-container {
+        width: 60%;
+        height: 50%;
+        padding: 3em 0;
+        grid-template-rows: 50% 50%;
+    }
+    #climber-title > h2 {font-size: 2.5rem;}
+    #climber-title > p {font-size: 1.3rem;}
+    .climber-name {height: 6vw;}
+}
+@media (max-width: 480px) {
+    #design-helper {
+        height: 75vh;
+        flex-direction: column;
+    }
+    header {
+        width: 100%;
+        height: 60%;
+    }
+    #top-header {
+        height: 10vw;
+    }
+    #logo {
+        width: 40%;
+        height: 60%;
+        margin-right: 3em;
+    }
+    #top-header > label {
+        width: 6%;
+    }
+    #menu-window {
+        width: 60%;
+        top: 10vw;
+        left: -60%;
+    }
+    #menu-window > ul >li {
+        font-size: 5rem;
+        padding: 1em;
+    }
+    #menu-bar:checked ~ #menu-window {top: 10vw;}
+    #visual {
+        width: 100%;
+        height: 40%;
     }
 }

@@ -95,16 +95,23 @@ function kilomanjaroMoutain() {
     famouseMountainTitle.innerHTML = 'KILOMANJARO<br>MOUNTAIN';
 }
 
-let a = 0, b = 0, c = 0;
+let sect1 = 0, sect2 = 0, sect3 = 0, tabletSect1 = 0, tabletSect2 = 0, tabletSect3 = 0;
+
 setInterval(() => {
     let scrollY = document.querySelector('html').scrollTop;
     let bodyHeight = document.querySelector('body').clientHeight;
     let scrollValue = scrollY / bodyHeight;
 
-    a = bodyHeight * 0.3;
-    b = bodyHeight * 0.53;
-    c = bodyHeight * 1;
-    console.log(scrollValue);
+    // 1920px 화면 이동
+    sect1 = bodyHeight * 0.3;
+    sect2 = bodyHeight * 0.53;
+    sect3 = bodyHeight * 1;
+
+    // 1024px 화면 이동
+    tabletSect1 = bodyHeight * 0.2;
+    tabletSect2 = bodyHeight * 0.425;
+    tabletSect3 = bodyHeight * 0.8;
+
     if (scrollValue >= 0.03) {
         document.querySelector('#mountains-title').className = 'mountainsTitleFadeIn';
         document.querySelector('#choice-mountains').className = 'mountainschoiceFadeIn';
@@ -116,14 +123,38 @@ setInterval(() => {
         document.querySelector('.famouse-content:nth-of-type(even)').classList.add('evenFamouseContentFadeIn');
         document.querySelector('.famouse-content:nth-of-type(4)').classList.add('evenFamouseContentFadeIn');
     }
-
 }, 100);
-document.querySelector('#menu-window > ul > li:nth-of-type(2)').addEventListener('click', () => {
-    window.scrollTo(0, Math.round(a));
+
+
+let bodyWidth = document.querySelector('body').clientWidth;
+
+document.querySelector('#menu-window > ul > li:nth-of-type(1)').addEventListener('click', () => {
+    window.scrollTo(0, 0);
 });
-document.querySelector('#menu-window > ul > li:nth-of-type(3)').addEventListener('click', () => {
-    window.scrollTo(0, Math.round(b));
-});
-document.querySelector('#menu-window > ul > li:nth-of-type(4)').addEventListener('click', () => {
-    window.scrollTo(0, Math.round(c));
-});
+// 1920px 화면이동 이벤트
+if (bodyWidth > 1024) {
+    document.querySelector('#menu-window > ul > li:nth-of-type(2)').addEventListener('click', () => {
+        window.scrollTo(0, Math.round(sect1));
+    });
+    document.querySelector('#menu-window > ul > li:nth-of-type(3)').addEventListener('click', () => {
+        window.scrollTo(0, Math.round(sect2));
+    });
+    document.querySelector('#menu-window > ul > li:nth-of-type(4)').addEventListener('click', () => {
+        window.scrollTo(0, Math.round(sect3));
+    });
+
+}
+// 1024px 화면 이동 이벤트
+else if (bodyWidth <= 1024 && bodyWidth > 480) {
+    document.querySelector('#menu-window > ul > li:nth-of-type(2)').addEventListener('click', () => {
+        window.scrollTo(0, Math.round(tabletSect1));
+    });
+    document.querySelector('#menu-window > ul > li:nth-of-type(3)').addEventListener('click', () => {
+        window.scrollTo(0, Math.round(tabletSect2));
+    });
+    document.querySelector('#menu-window > ul > li:nth-of-type(4)').addEventListener('click', () => {
+        window.scrollTo(0, Math.round(tabletSect3));
+    });
+} else {
+
+}
